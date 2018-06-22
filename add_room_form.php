@@ -35,12 +35,15 @@ $projects = $conn->query($sql);
       	border-radius: 8px;
         text-align: center;
       }
+      b {
+      	 margin: 15px 0px 10px 10px;
+      }
      .checkboxes {
       text-align:left;
      }
 
     .checkboxes input{
-      margin: 0px 0px 0px 40px;
+      margin: 8px 0px 0px 40px;
      }
 
      .checkboxes label{
@@ -51,7 +54,7 @@ $projects = $conn->query($sql);
      }
 
     .radioboxes input{
-      margin: 0px 0px 0px 40px;
+      margin: 8px 0px 0px 40px;
      }
 
      .radioboxes label{
@@ -63,12 +66,12 @@ $projects = $conn->query($sql);
 
 <form action="add_room.php" method="post">
 
-	<h1> <em> <font face="Algerian"> Room Data Sheet </font> </em> </h1>
+	<h1> <em> <font face="Algerian" style="font-size:100px"> Room Data Sheet </font> </em> </h1>
 
 	<hr>
 
 	<h2> <em> &#9658; OPERATIONAL DATA </em> </h2>
-	
+
     <div>
     	<div class="form-group row">
 			<div class="col-xs-4">
@@ -438,67 +441,74 @@ $projects = $conn->query($sql);
 	<hr>
 
 	<h2> <em> &#9658; COMMUNICATIONS DATA </em> </h2>
-
-    <div  class="checkboxes">
-		<label>
-			<input type="checkbox" name="Communications[]" value="Bedhead Consoles"> Bedhead Consoles
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Closed Circuit TV (Educational)"> Closed Circuit TV (Educational)
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Computer Terminal"> Computer Terminal
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Computer Printer"> Computer Printer
-		</label>
-		 <h5> <b style="color: brown">Call System : </b> </h5>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Emergency"> Emergency
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Audio"> Audio
-		</label>
-        <label>
-			<input type="checkbox" name="Communications[]" value="Audio/ Visual"> Audio/ Visual
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Code Blue (Cardiac)"> Code Blue (Cardiac)
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Code White (Panic)"> Code White (Panic)
-		</label>
+        <div>
+	        <div  class="checkboxes">
+				<label>
+					<input type="checkbox" name="Communications[]" value="Bedhead Consoles"> Bedhead Consoles
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Closed Circuit TV (Educational)"> Closed Circuit TV (Educational)
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Computer Terminal"> Computer Terminal
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Computer Printer"> Computer Printer
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Patient Monitoring "> Patient Monitoring
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Telephone"> Telephone
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Dictation"> Dictation
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Intercom"> Intercom
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Television"> Television
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Data"> Data
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Security TV"> Security TV
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Access Control"> Access Control
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Pocket Paging"> Pocket Paging
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Public Address"> Public Address
+				</label>
+		    </div>
+		</div>
 		<br>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Patient Monitoring "> Patient Monitoring
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Telephone"> Telephone
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Dictation"> Dictation
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Intercom"> Intercom
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Television"> Television
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Data"> Data
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Security TV"> Security TV
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Access Control"> Access Control
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Pocket Paging"> Pocket Paging
-		</label>
-		<label>
-			<input type="checkbox" name="Communications[]" value="Public Address"> Public Address
-		</label>
+		<div>
+			<b style="color: brown">Call System : </b> <br> 
+			<div  class="checkboxes">
+				<label>
+					<input type="checkbox" name="Communications[]" value="Emergency"> Emergency
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Audio"> Audio
+				</label>
+		        <label>
+					<input type="checkbox" name="Communications[]" value="Audio/ Visual"> Audio/ Visual
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Code Blue (Cardiac)"> Code Blue (Cardiac)
+				</label>
+				<label>
+					<input type="checkbox" name="Communications[]" value="Code White (Panic)"> Code White (Panic)
+				</label>
+				<br>
+			</div>
+		</div>
 	</div>
 
 	<hr>
