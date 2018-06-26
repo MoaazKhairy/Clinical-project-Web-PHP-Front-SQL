@@ -23,7 +23,7 @@ $projects = $conn->query($sql);
 	    border-style: inset;
         border-width: 1px;
 	  }
-	  div {
+	  div.form-group {
 	  	padding-left: 50px;
 	  }
 	  body {

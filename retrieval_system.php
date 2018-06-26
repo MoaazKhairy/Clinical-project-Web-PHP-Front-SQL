@@ -69,7 +69,7 @@ $tables_columns = [
 ];
 foreach ($tables_columns as $table => $columns) {
 	foreach ($columns as $column) {
-		$sql = "SELECT " . $column . ", COUNT(`" . $column . "`) FROM `" . $table . "` JOIN `operational_data_room` on `room_id` = ID WHERE PNO =" . $_GET['projectno'] . " GROUP BY `" . $column . "`";
+		$sql = "SELECT " . $column . ", COUNT(`" . $column . "`) FROM `" . $table . "` JOIN `operational_data_room` on `room_id` = ID WHERE PNO = '" . $_GET['projectno'] . "' GROUP BY `" . $column . "`";
 		$results[$column] = $conn->query($sql);
 	}
 }
@@ -121,11 +121,11 @@ foreach ($tables_columns as $table => $columns) {
 <?php require 'navbar.php'; ?>
 
     <h1> <em> <font face="Algerian" style="font-size:100px"> Retrieval System </font> </em> </h1>
+<div class="container">
 <?php
 foreach ($tables_columns as $table => $columns) {
 	foreach ($columns as $column) {
 ?>
-<div class="container">
   <div class="row">
     <div class="col-xs-6">
 		<table align="center">
@@ -153,7 +153,6 @@ foreach ($tables_columns as $table => $columns) {
 		<canvas id="chart-area-<?php echo $column; ?>"></canvas>
     </div>
   </div>
-</div>
 <?php
 		echo "<script>window." . $column  . "_name = '" . $column . "';</script>";
 		echo "<script>window." . $column  . "_data = [";
@@ -168,6 +167,7 @@ foreach ($tables_columns as $table => $columns) {
 	}
 }
 ?>
+</div>
 	<script>
 	window.onload = function() {
 <?php

@@ -33,26 +33,26 @@
     <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img src="Add project.jpg" alt="Add Project">
-        <div class="carousel-caption">
-          <h3><a style="color: #000;" href="add_project_form.php">Add Project</a></h3>
+        <div class="carousel-caption" style="background-color: rgba(0,0,0,.5);">
+          <h3><a style="color: #fff;" href="add_project_form.php">Add Project</a></h3>
         </div>
       </div>
       <div class="item">
         <img src="Add Room.jpg" alt="Add Room">
-        <div class="carousel-caption">
-          <h3><a style="color: #000;" href="add_room_form.php">Add Room</a></h3>
+        <div class="carousel-caption" style="background-color: rgba(0,0,0,.5);">
+          <h3><a style="color: #fff;" href="add_room_form.php">Add Room</a></h3>
         </div>
       </div>
       <div class="item">
         <img src="List projects.jpg" alt="List Projects">
-        <div class="carousel-caption">
-          <h3><a style="color: #000;" href="list_projects.php">List Projects</a></h3>
+        <div class="carousel-caption" style="background-color: rgba(0,0,0,.5);">
+          <h3><a style="color: #fff;" href="list_projects.php">List Projects</a></h3>
         </div>
       </div>
       <div class="item">
         <img src="List Rooms.jpg" alt="List Rooms">
-        <div class="carousel-caption">
-          <h3><a style="color: #000;" href="list_rooms.php">List Rooms</a></h3>
+        <div class="carousel-caption" style="background-color: rgba(0,0,0,.5);">
+          <h3><a style="color: #fff;" href="list_rooms.php">List Rooms</a></h3>
         </div>
       </div>
     </div>
