@@ -16,9 +16,8 @@
 	    background-color: lightgray ;
 	}
     
-    div {
+    div.form-group {
 	  	padding-left: 50px;
-	  	padding-top: 10px;
 	}
 	
 	body {

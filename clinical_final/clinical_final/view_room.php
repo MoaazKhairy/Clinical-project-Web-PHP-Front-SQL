@@ -3,6 +3,78 @@ require 'db_conn.php';
 $sql = "SELECT * FROM `operational_data_room` where ID = '" . $_GET['ID'] . "'";
 $room = $conn->query($sql);
 $room = $room->fetch_assoc();
+
+$tables_columns = [
+	'architecture' => [
+		'DoorWidth',
+		'Windows',
+		'CeilingHeight',
+		'Racks',
+		'Hooks', 
+		'Boards',
+		'Tracks',
+		'Rails',
+		'Mirrors'
+	],
+	'arch_ceilingfinishes' => [
+		'CeilingFinishes'
+	],
+	'arch_floorfinishes' => [
+		'FloorFinishes'
+	],
+	'arch_wallfinishes' => [
+		'WallFinishes'
+	],
+	'arch_specialconsiderations' => [
+		'SpecialConsiderations'
+	],
+	'arch_specialstoragerequirements' => [
+		'SpecialStorageRequirements'
+	],
+	'communications' => [
+		'Communications'
+	],
+	'electrical' => [
+		'ClockSystem',
+		'Imaging'
+	],
+	'electrical_lighting' => [
+		'Lighting'
+	],
+	'electrical_alarm' => [
+		'Alarm'
+	],
+	'electrical_lightingcontrol' => [
+		'LightingControl'
+	],
+	'electrical_doors' => [
+		'Doors'
+	],
+	'mechanical' => [
+		'Temperature',
+		'Humidity',
+	'RoomPressurization'
+	],
+	'plumbing_drainage' => [
+		'Drainage'
+	],
+	'plumbing_water' => [
+		'Water'
+	],
+	'plumbing_fixtures' => [
+		'Fixtures'
+	],
+	'plumbing_gases' => [
+		'Gases'
+	],
+	'plumbing_accessories' => [
+		'Accessories'
+	]
+];
+foreach ($tables_columns as $table => $columns) {
+	$sql = "SELECT " . implode(',', $columns) . " FROM `" . $table . "` WHERE `room_id` = '" . $_GET['ID'] . "'";
+	$results[$table] = $conn->query($sql);
+}
 ?>
 <html>
 
@@ -75,6 +147,26 @@ $room = $room->fetch_assoc();
 		echo '</tr>';
 		?>
 	</table>
+
+<div class="container">
+<?php
+foreach ($tables_columns as $table => $columns) {
+?>
+  <div class="row">
+    <div class="col-xs-12">
+    	<?php
+    	echo '<hr>';
+    	$result = $results[$table]->fetch_assoc();
+    	foreach ($columns as $column) {
+	    	echo '<p>' . $column . ': <strong>' . $result[$column] . '</strong></p>';
+		}
+		?>
+    </div>
+  </div>
+<?php
+}
+?>
+</div>
 
 </body>
 </html>
